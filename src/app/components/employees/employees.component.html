@@ -1,0 +1,61 @@
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Event Management</a>
+      
+        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#employeesModal" (click)="onAddClick();">Add Employee</button>
+
+    </div>
+  </nav>
+  <div class="container mt-2">
+    <table class="table table-hover tabel-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of employeesDetails">
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>
+                    <button (click)="editEmployeesDetails(item)" data-bs-toggle="modal" data-bs-target="#employeesModal" class="btn btn-sm btn-warning text-white mx-2">Edit</button>
+                    <button (click)="deleteEmployeesDetails(item.id)" class="btn btn-sm btn-danger">Delete</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="employeesModal" tabindex="-1" aria-labelledby="employeesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="employeesModalLabel">Employee Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="employeesForm">
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" placeholder="Enter full name here!" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="example@gmail.com" formControlName="email">
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close" (click)="reset();">Close</button>
+          <button type="button" class="btn btn-primary" (click)="updateEmployeesDetails()" *ngIf="showUpdateBtn">Update Employee</button>
+
+          <button type="button" class="btn btn-success" (click)="postEmployeesDetails()" *ngIf="showAddBtn">Add Employee</button>
+        </div>
+      </div>
+    </div>
+  </div>

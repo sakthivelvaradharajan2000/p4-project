@@ -1,0 +1,34 @@
+{
+  "employees": [
+    {
+      "id": 2,
+      "name": "Barry Allen",
+      "email": "barryallen@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Cleve Lloyd",
+      "email": "Lcleve@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "tim cook",
+      "email": "timcook@apple.com"
+    },
+    {
+      "id": 6,
+      "name": "Mark Zuckerberg",
+      "email": "markZ@facebook.com"
+    },
+    {
+      "id": 7,
+      "name": "satya nadella",
+      "email": "snadella@microsoft.com"
+    },
+    {
+      "id": 8,
+      "name": "Bruce Wayne",
+      "email": "bruce@wayneenterprises.com"
+    }
+  ]
+}
